@@ -1,0 +1,37 @@
+<nav class="navbar navbar-inverse bg-inverse fix">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li>
+				<a href="#/home">WEATHER APP</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div>
+	<div class="cities-list">
+		<div>
+			<span ng-repeat="city in cities">{{city | capitalize}} <span class="glyphicon glyphicon-remove" ng-click="removeCity(city)"></span></span>
+			<input ng-model="search" ng-blur="getWeather()">
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="col-sm-4" ng-repeat="weather in weathers">
+			<div class="display-weather">
+				<div>
+					<div>
+						<span>{{weather.name | capitalize}}</span><br>
+						<span>{{date | dateFormat}}</span>
+					</div>
+					<div>
+						<span>{{weather.main.temp}}<sup>°C</sup></span><br>
+						<span>{{weather.weather[0].description | capitalize}}</span>
+					</div>
+					<div>
+						<span>Humidity: {{weather.main.humidity}}%</span><br>
+						<span>Wind: {{weather.wind.speed}}km/h</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

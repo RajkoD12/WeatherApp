@@ -1,0 +1,160 @@
+@import 'mixins';
+
+* {
+	margin: 0;
+	padding: 0;
+	@include boxSizing;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: rgb(235,239,241);
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+sup {
+	vertical-align: super;
+	font-size: 12px;
+}
+
+/* editovanje bootstrapovih klasa nije lepa praksa, pa nisam hteo da editujem .navbar
+ali posto nisam znao kako drugacije da uklonim prazan prostor izmedju navbara i .cities-list, dodao sam klasu .fix da ispravim */
+.fix {
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+.wrap {
+	width: 80%;
+	padding: 1em;
+	margin: 0 auto;
+	margin-top: 6em;
+	text-align: left;
+}
+
+/*
+*****************************
+SIVA TRAKA SA IMENIMA GRADOVA
+*****************************
+*/
+
+.cities-list {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	background-color: rgb(100,110,123);
+	width: 100%;
+	padding: 0.25em;
+	margin: 0;
+	>div {
+		overflow: hidden;
+		width:50%;
+		background-color: rgb(131,139,149);
+		border-radius: 5px;
+		margin-top: 0.5em;
+		>span {
+			line-height: 3em;
+			color: white;
+			background-color: rgb(155,162,170);
+			float: left;
+			border-radius: 5px;
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+			margin-left: 0.5em;
+			padding: 0 0.5em;
+		}
+		>input {
+			width: inherit;
+			line-height: 3em;
+			margin: 0.5em;
+			float: left;
+			background-color: rgb(131,139,149);
+			border: none; 
+		}
+	}
+}
+
+/*
+*************************************
+DEO ZA PRIKAZ INFORMACIJA O GRADOVIMA
+*************************************
+*/
+
+.display-weather {
+	float:left;
+	box-shadow: 1px 1px 2px rgb(225,225,225);
+	background-color: white;
+	border-radius: 3px;
+	padding: 4px;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 1em;
+	color: grey;
+	font-size: 12px;
+	>div {
+		>div {
+			display: inline-block;
+			width: 30%;
+		}
+	}
+}
+
+.display-weather>div>div:nth-child(1)>span:first-child {
+	color: black;
+	font-size: 24px;
+}
+
+.display-weather>div>div:nth-child(2)>span:first-child {
+	color: black;
+	font-size: 32px;
+}
+
+/*
+***************************
+PODESAVANJE ZA MANJE EKRANE
+***************************
+*/
+
+@media screen and (max-width: 1250px) {
+
+	.display-weather>div>div:nth-child(1)>span:first-child {
+		font-size: 20px;
+	}
+
+}
+
+@media screen and (max-width: 1050px) {
+
+	.wrap {
+		width: 100%;
+		margin-top: 1.5em;
+	}
+
+	.cities-list {
+		>div {
+			width: 100%;
+			>span {
+				line-height: 2em;
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 400px) {
+
+	.display-weather {
+		font-size: 10px;
+	}
+
+	.display-weather>div>div:nth-child(1)>span:first-child {
+		font-size: 16px;
+	}
+
+	.display-weather>div>div:nth-child(2)>span:first-child {
+		font-size: 26px;
+	}
+
+}
