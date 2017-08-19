@@ -16,8 +16,6 @@ sup {
   vertical-align: super;
   font-size: 12px; }
 
-/* editovanje bootstrapovih klasa nije lepa praksa, pa nisam hteo da editujem .navbar
-ali posto nisam znao kako drugacije da uklonim prazan prostor izmedju navbara i .cities-list, dodao sam klasu .fix da ispravim */
 .fix {
   margin-bottom: 0;
   border-radius: 0; }
@@ -29,11 +27,9 @@ ali posto nisam znao kako drugacije da uklonim prazan prostor izmedju navbara i 
   margin-top: 6em;
   text-align: left; }
 
-/*
-*****************************
-SIVA TRAKA SA IMENIMA GRADOVA
-*****************************
-*/
+/**************************************************************************************************************
+********************************** SIVA TRAKA SA IMENIMA GRADOVA I PRETRAGOM **********************************
+**************************************************************************************************************/
 .cities-list {
   display: flex;
   flex-wrap: nowrap;
@@ -44,7 +40,6 @@ SIVA TRAKA SA IMENIMA GRADOVA
   margin: 0; }
   .cities-list > div {
     overflow: hidden;
-    width: 50%;
     background-color: #838b95;
     border-radius: 5px;
     margin-top: 0.5em; }
@@ -59,18 +54,16 @@ SIVA TRAKA SA IMENIMA GRADOVA
       margin-left: 0.5em;
       padding: 0 0.5em; }
     .cities-list > div > input {
-      width: inherit;
+      min-width: 400px;
       line-height: 3em;
       margin: 0.5em;
       float: left;
       background-color: #838b95;
       border: none; }
 
-/*
-*************************************
-DEO ZA PRIKAZ INFORMACIJA O GRADOVIMA
-*************************************
-*/
+/**************************************************************************************************************
+************************************ DEO ZA PRIKAZ INFORMACIJA O GRADOVIMA ************************************
+**************************************************************************************************************/
 .display-weather {
   float: left;
   box-shadow: 1px 1px 2px #e1e1e1;
@@ -82,9 +75,12 @@ DEO ZA PRIKAZ INFORMACIJA O GRADOVIMA
   margin-bottom: 1em;
   color: grey;
   font-size: 12px; }
-  .display-weather > div > div {
-    display: inline-block;
-    width: 30%; }
+  .display-weather > div {
+    display: flex;
+    min-height: 100px; }
+    .display-weather > div > div {
+      width: 30%;
+      margin: auto; }
 
 .display-weather > div > div:nth-child(1) > span:first-child {
   color: black;
@@ -94,11 +90,9 @@ DEO ZA PRIKAZ INFORMACIJA O GRADOVIMA
   color: black;
   font-size: 32px; }
 
-/*
-***************************
-PODESAVANJE ZA MANJE EKRANE
-***************************
-*/
+/**************************************************************************************************************
+***************************************** PODESAVANJE ZA MANJE EKRANE *****************************************
+**************************************************************************************************************/
 @media screen and (max-width: 1250px) {
   .display-weather > div > div:nth-child(1) > span:first-child {
     font-size: 20px; } }

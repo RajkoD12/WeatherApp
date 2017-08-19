@@ -19,8 +19,6 @@ sup {
 	font-size: 12px;
 }
 
-/* editovanje bootstrapovih klasa nije lepa praksa, pa nisam hteo da editujem .navbar
-ali posto nisam znao kako drugacije da uklonim prazan prostor izmedju navbara i .cities-list, dodao sam klasu .fix da ispravim */
 .fix {
 	margin-bottom: 0;
 	border-radius: 0;
@@ -34,11 +32,11 @@ ali posto nisam znao kako drugacije da uklonim prazan prostor izmedju navbara i 
 	text-align: left;
 }
 
-/*
-*****************************
-SIVA TRAKA SA IMENIMA GRADOVA
-*****************************
-*/
+
+/**************************************************************************************************************
+********************************** SIVA TRAKA SA IMENIMA GRADOVA I PRETRAGOM **********************************
+**************************************************************************************************************/
+
 
 .cities-list {
 	display: flex;
@@ -50,7 +48,6 @@ SIVA TRAKA SA IMENIMA GRADOVA
 	margin: 0;
 	>div {
 		overflow: hidden;
-		width:50%;
 		background-color: rgb(131,139,149);
 		border-radius: 5px;
 		margin-top: 0.5em;
@@ -66,7 +63,7 @@ SIVA TRAKA SA IMENIMA GRADOVA
 			padding: 0 0.5em;
 		}
 		>input {
-			width: inherit;
+			min-width: 400px;
 			line-height: 3em;
 			margin: 0.5em;
 			float: left;
@@ -76,11 +73,9 @@ SIVA TRAKA SA IMENIMA GRADOVA
 	}
 }
 
-/*
-*************************************
-DEO ZA PRIKAZ INFORMACIJA O GRADOVIMA
-*************************************
-*/
+/**************************************************************************************************************
+************************************ DEO ZA PRIKAZ INFORMACIJA O GRADOVIMA ************************************
+**************************************************************************************************************/
 
 .display-weather {
 	float:left;
@@ -94,9 +89,11 @@ DEO ZA PRIKAZ INFORMACIJA O GRADOVIMA
 	color: grey;
 	font-size: 12px;
 	>div {
+		display: flex;
+		min-height: 100px;
 		>div {
-			display: inline-block;
 			width: 30%;
+			margin: auto;
 		}
 	}
 }
@@ -111,11 +108,9 @@ DEO ZA PRIKAZ INFORMACIJA O GRADOVIMA
 	font-size: 32px;
 }
 
-/*
-***************************
-PODESAVANJE ZA MANJE EKRANE
-***************************
-*/
+/**************************************************************************************************************
+***************************************** PODESAVANJE ZA MANJE EKRANE *****************************************
+**************************************************************************************************************/
 
 @media screen and (max-width: 1250px) {
 

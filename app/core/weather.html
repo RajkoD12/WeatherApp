@@ -10,8 +10,8 @@
 <div>
 	<div class="cities-list">
 		<div>
-			<span ng-repeat="city in cities">{{city | capitalize}} <span class="glyphicon glyphicon-remove" ng-click="removeCity(city)"></span></span>
-			<input ng-model="search" ng-blur="getWeather()">
+			<span ng-repeat="weather in weathers">{{weather.name | capitalize}} <span class="glyphicon glyphicon-remove" ng-click="removeCity(weather.name)"></span></span>
+			<input ng-model="search" ng-blur="getWeather()" autocomplete="off">
 		</div>
 	</div>
 	<div class="wrap">
