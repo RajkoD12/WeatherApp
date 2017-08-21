@@ -2,10 +2,19 @@
 	"use strict";
 
 	function config($stateProvider, $urlRouterProvider) {
-		$urlRouterProvider.otherwise("/home");
+		$urlRouterProvider.otherwise("/weather");
 
-		$stateProvider.state("home", {
-			url: "/home",
+		$stateProvider.state("main", {
+			abstract: true,
+			views: {
+				"header": {
+					templateUrl: "app/core/header.html"
+				}
+			}
+		});
+
+		$stateProvider.state("main.home", {
+			url: "/weather",
 			views: {
 				"content@": {
 					templateUrl: "app/core/weather.html",
