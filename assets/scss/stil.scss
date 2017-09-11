@@ -1,27 +1,17 @@
 @import 'mixins';
 
-* {
-	margin: 0;
-	padding: 0;
-	@include boxSizing;
-}
-
 body {
+	@include boxSizing;
 	font-family: 'Roboto', sans-serif;
-	background-color: rgb(235,239,241);
-	padding: 0;
-	margin: 0;
-	text-align: center;
+	padding: 0px;
+	margin: 0px;
+	background-color: rgb(235, 239, 241);
+	text-decoration: none;
 }
 
 sup {
 	vertical-align: super;
 	font-size: 12px;
-}
-
-.fix {
-	margin-bottom: 0;
-	border-radius: 0;
 }
 
 .wrap {
@@ -32,6 +22,58 @@ sup {
 	text-align: left;
 }
 
+.kontejner {
+	width: 100%;
+	float: left;
+}
+
+/**************************************************************************************************************
+************************************************** NAVIGACIJA *************************************************
+**************************************************************************************************************/
+
+nav {
+	width: 100%;
+	background-color: rgb(51, 51, 51);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	line-height: 60px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	ul:first-child {
+		font-size: 24px;
+		padding: 0 25px;
+	}
+	ul {
+		line-height: 60px;
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		text-align: center;
+		li {
+			line-height: 60px;
+			display: inline-block;
+			height: 30px;
+			width: 200px;
+			a {
+				width: 200px;
+				display: block;
+				color: rgb(255, 255, 255);
+				text-decoration: none;
+				&:hover {
+					background-color: rgb(85, 85, 85);
+					color: rgb(255, 255, 255);
+					text-decoration: none;
+				}
+				&:focus {
+					color: rgb(255, 255, 255);
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
 
 /**************************************************************************************************************
 ********************************** SIVA TRAKA SA IMENIMA GRADOVA I PRETRAGOM **********************************
@@ -40,35 +82,46 @@ sup {
 
 .cities-list {
 	display: flex;
+	text-align: center;
 	flex-wrap: nowrap;
 	justify-content: center;
-	background-color: rgb(100,110,123);
+	background-color: rgb(100, 110, 123);
 	width: 100%;
 	padding: 0.25em;
 	margin: 0;
-	>div {
+	.weatherholder {
 		overflow: hidden;
-		background-color: rgb(131,139,149);
+		background-color: rgb(131, 139, 149);
 		border-radius: 5px;
-		margin-top: 0.5em;
+		margin: 0.5em 0;
 		>span {
 			line-height: 3em;
-			color: white;
-			background-color: rgb(155,162,170);
+			color: rgb(255, 255, 255);
+			background-color: rgb(155, 162, 170);
 			float: left;
 			border-radius: 5px;
 			margin-top: 0.5em;
 			margin-bottom: 0.5em;
-			margin-left: 0.5em;
+			margin-right: 0.5em;
 			padding: 0 0.5em;
+		}
+		>span:first-child {
+			margin-left: 0.5em;
 		}
 		>input {
 			min-width: 400px;
 			line-height: 3em;
 			margin: 0.5em;
 			float: left;
-			background-color: rgb(131,139,149);
-			border: none; 
+			background-color: rgb(131, 139, 149);
+			border: none;
+			&::placeholder {
+				color: rgb(255, 255, 255);
+				font-size: 1.2em;
+			}
+		}
+		.removecity:hover {
+			color: rgb(111, 7, 7);
 		}
 	}
 }
@@ -79,15 +132,20 @@ sup {
 
 .display-weather {
 	float:left;
-	box-shadow: 1px 1px 2px rgb(225,225,225);
-	background-color: white;
+	position: relative;
+	box-shadow: 1px 1px 2px rgb(225, 225, 225);
+	background-color: rgb(255, 255, 255);
 	border-radius: 3px;
 	padding: 4px;
 	width: 100%;
 	text-align: center;
 	margin-bottom: 1em;
-	color: grey;
+	color: rgb(51, 51, 51);
 	font-size: 12px;
+	&:hover {
+		background-color: rgba(255, 255, 150, 0.2);
+		cursor: pointer;
+	}
 	>div {
 		display: flex;
 		min-height: 100px;
@@ -96,15 +154,16 @@ sup {
 			margin: auto;
 		}
 	}
+	.mapbutton {
+		position: absolute;
+		top: 1%;
+		right: 1%;
+		color: rgb(255, 0, 0);
+	}
 }
 
-.display-weather>div>div:nth-child(1)>span:first-child {
-	color: black;
-	font-size: 24px;
-}
-
-.display-weather>div>div:nth-child(2)>span:first-child {
-	color: black;
+.title {
+	color: rgb(0, 0, 0);
 	font-size: 32px;
 }
 

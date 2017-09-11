@@ -1,0 +1,31 @@
+<div class="kontejner">
+	<div class="cities-list">
+		<div class="weatherholder">
+			<span ng-repeat="weather in weathers">{{weather.name}} <span class="glyphicon glyphicon-remove removecity" ng-click="removeCity(weather.name)"></span></span>
+				<input id="input" ng-model="search" placeholder= " Enter search terms" autocomplete="off">
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="col-sm-4" ng-repeat="weather in weathers">
+			<div class="display-weather" ng-click="openForecast(weather.sys.country, weather.name)">
+				<div>
+					<div>
+						<span class="title">{{weather.name}}</span><br>
+						<span>{{date | dateFormat}}</span>
+					</div>
+					<div>
+						<span class="title">{{weather.main.temp}}<sup>°C</sup></span><br>
+						<span>{{weather.weather[0].description | capitalize}}</span>
+					</div>
+					<div>
+						<img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png">
+						<br>
+						<span>Humidity: {{weather.main.humidity}}%</span><br>
+						<span>Wind: {{weather.wind.speed}}km/h</span>
+					</div>
+				</div>
+				<span class="mapbutton" ng-click="openMaps(); $event.stopPropagation();">Map</span>
+			</div>
+		</div>
+	</div>
+</div>

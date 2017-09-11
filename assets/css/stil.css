@@ -1,24 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
+body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-body {
+  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  padding: 0px;
+  margin: 0px;
   background-color: #ebeff1;
-  padding: 0;
-  margin: 0;
-  text-align: center; }
+  text-decoration: none; }
 
 sup {
   vertical-align: super;
   font-size: 12px; }
-
-.fix {
-  margin-bottom: 0;
-  border-radius: 0; }
 
 .wrap {
   width: 80%;
@@ -27,23 +19,68 @@ sup {
   margin-top: 6em;
   text-align: left; }
 
+.kontejner {
+  width: 100%;
+  float: left; }
+
+/**************************************************************************************************************
+************************************************** NAVIGACIJA *************************************************
+**************************************************************************************************************/
+nav {
+  width: 100%;
+  background-color: #333333;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  line-height: 60px;
+  text-align: center;
+  color: white; }
+  nav ul:first-child {
+    font-size: 24px;
+    padding: 0 25px; }
+  nav ul {
+    line-height: 60px;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-align: center; }
+    nav ul li {
+      line-height: 60px;
+      display: inline-block;
+      height: 30px;
+      width: 200px; }
+      nav ul li a {
+        width: 200px;
+        display: block;
+        color: white;
+        text-decoration: none; }
+        nav ul li a:hover {
+          background-color: #555555;
+          color: white;
+          text-decoration: none; }
+        nav ul li a:focus {
+          color: white;
+          text-decoration: none; }
+
 /**************************************************************************************************************
 ********************************** SIVA TRAKA SA IMENIMA GRADOVA I PRETRAGOM **********************************
 **************************************************************************************************************/
 .cities-list {
   display: flex;
+  text-align: center;
   flex-wrap: nowrap;
   justify-content: center;
   background-color: #646e7b;
   width: 100%;
   padding: 0.25em;
   margin: 0; }
-  .cities-list > div {
+  .cities-list .weatherholder {
     overflow: hidden;
     background-color: #838b95;
     border-radius: 5px;
-    margin-top: 0.5em; }
-    .cities-list > div > span {
+    margin: 0.5em 0; }
+    .cities-list .weatherholder > span {
       line-height: 3em;
       color: white;
       background-color: #9ba2aa;
@@ -51,21 +88,29 @@ sup {
       border-radius: 5px;
       margin-top: 0.5em;
       margin-bottom: 0.5em;
-      margin-left: 0.5em;
+      margin-right: 0.5em;
       padding: 0 0.5em; }
-    .cities-list > div > input {
+    .cities-list .weatherholder > span:first-child {
+      margin-left: 0.5em; }
+    .cities-list .weatherholder > input {
       min-width: 400px;
       line-height: 3em;
       margin: 0.5em;
       float: left;
       background-color: #838b95;
       border: none; }
+      .cities-list .weatherholder > input::placeholder {
+        color: white;
+        font-size: 1.2em; }
+    .cities-list .weatherholder .removecity:hover {
+      color: #6f0707; }
 
 /**************************************************************************************************************
 ************************************ DEO ZA PRIKAZ INFORMACIJA O GRADOVIMA ************************************
 **************************************************************************************************************/
 .display-weather {
   float: left;
+  position: relative;
   box-shadow: 1px 1px 2px #e1e1e1;
   background-color: white;
   border-radius: 3px;
@@ -73,20 +118,24 @@ sup {
   width: 100%;
   text-align: center;
   margin-bottom: 1em;
-  color: grey;
+  color: #333333;
   font-size: 12px; }
+  .display-weather:hover {
+    background-color: rgba(255, 255, 150, 0.2);
+    cursor: pointer; }
   .display-weather > div {
     display: flex;
     min-height: 100px; }
     .display-weather > div > div {
       width: 30%;
       margin: auto; }
+  .display-weather .mapbutton {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    color: red; }
 
-.display-weather > div > div:nth-child(1) > span:first-child {
-  color: black;
-  font-size: 24px; }
-
-.display-weather > div > div:nth-child(2) > span:first-child {
+.title {
   color: black;
   font-size: 32px; }
 

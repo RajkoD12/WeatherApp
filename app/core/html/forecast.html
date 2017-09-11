@@ -1,0 +1,14 @@
+<div class="kontejner">
+	<div class="cities-list">
+		<div>
+			{{result.city.name}}
+		</div>
+	</div>
+	<div>
+		<div ng-repeat="forecast in forecasts.list">
+			<div>
+			<span>{{forecast.main.temp}}</span><br>
+			</div>
+		</div>
+	</div>
+</div>
