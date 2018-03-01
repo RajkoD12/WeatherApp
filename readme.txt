@@ -22,11 +22,6 @@ UOČENI PROBLEMI:
 
 *********************************************************************************************
 
-- prilikom izrade, potrebno često pražnjenje cache memorije prilikom rada u Google Chrome
-- povremena nemogućnost pokretanja sa "localhost:8080"
-
-oba problema se rešavaju čišćenjem cache
-
 - prilikom slanja zahteva za više gradova može doći do preklapanja podataka između različitih gradova
 
 dodat timeout na poziv jednog zahteva da bi se izbeglo preklapanje

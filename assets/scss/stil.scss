@@ -124,6 +124,17 @@ nav {
 			color: rgb(111, 7, 7);
 		}
 	}
+	.forecastholder {
+		overflow: hidden;
+		background-color: rgb(131, 139, 149);
+		border-radius: 5px;
+		margin: 0.5em;
+		padding: 1em 3em;
+		>span {
+			color: rgb(255, 255, 255);
+			font-size: 1.75em;
+		}
+	}
 }
 
 /**************************************************************************************************************

@@ -34,17 +34,14 @@
 		});
 
 		$stateProvider.state("main.forecast", {
-			url: "/forecast/:city+:country",
+			url: "/forecast/:id",
 			views: {
 				"content@": {
 					templateUrl: "app/core/html/forecast.html",
 					controller: "ForecastController",
 					resolve: {
-						country: function($stateParams) {
-							return $stateParams.country;
-						},
-						city: function($stateParams) {
-							return $stateParams.city;
+						id: function($stateParams) {
+							return $stateParams.id;
 						}
 					}
 				}

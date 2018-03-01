@@ -63,9 +63,8 @@
 			};
 		};
 
-		$scope.openForecast = function(country, city) {
-			//console.log(country, city);
-			$window.location.href = "#/forecast/" + city + "+" + country;
+		$scope.openForecast = function(id) {
+			$window.location.href = "#/forecast/" + id;
 		};
 
 		$scope.openMaps = function() {

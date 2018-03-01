@@ -1,13 +1,14 @@
 <div class="kontejner">
 	<div class="cities-list">
-		<div>
-			{{result.city.name}}
+		<div class="forecastholder">
+			<span>Displaying 5-day forecast for {{forecasts.city.name}} ({{forecasts.city.country}})</span>
 		</div>
 	</div>
-	<div>
+	<div class="wrap">
 		<div ng-repeat="forecast in forecasts.list">
-			<div>
-			<span>{{forecast.main.temp}}</span><br>
+			<div class="display-forecast">
+				vreme: <span>{{forecast.dt_date | date: "yyyy-MM-dd, HH:mm"}}</span>,
+				temperatura: <span>{{forecast.main.temp}}</span><br>
 			</div>
 		</div>
 	</div>

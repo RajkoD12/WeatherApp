@@ -7,7 +7,7 @@
 	</div>
 	<div class="wrap">
 		<div class="col-sm-4" ng-repeat="weather in weathers">
-			<div class="display-weather" ng-click="openForecast(weather.sys.country, weather.name)">
+			<div class="display-weather" ng-click="openForecast(weather.id)">
 				<div>
 					<div>
 						<span class="title">{{weather.name}}</span><br>
