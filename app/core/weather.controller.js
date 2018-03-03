@@ -14,9 +14,9 @@
 			if(event.which == 13) 
 				$scope.getWeather();
 		})
-		/*.on("blur", function() {
+		.on("blur", function() {
 			$scope.getWeather();
-		})*/;
+		});
 
 		$scope.getOneWeather = function(city) {
 			$http.get(url + city + "&" + apiKey).then(function(response) {

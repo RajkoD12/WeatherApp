@@ -7,9 +7,11 @@
 	<div class="wrap">
 		<div ng-repeat="forecast in forecasts.list">
 			<div class="display-forecast">
-				vreme: <span>{{forecast.dt_date | date: "yyyy-MM-dd, HH:mm"}}</span>,
-				temperatura: <span>{{forecast.main.temp}}</span><br>
+				<span>datum: {{forecast.dt_date | date: "dd.MM.yyyy."}}</span><br>
+				<span>vreme: {{forecast.dt_date | date: "HH:mm"}}</span><br>
+				<span>temperatura: {{forecast.main.temp}}</span><br>
 			</div>
+			<br>
 		</div>
 	</div>
 </div>
